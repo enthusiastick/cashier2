@@ -23,6 +23,9 @@ while true
   price_input = gets.chomp
   if price_input == "exit"
     running_total_in_dollars = in_dollars(running_total_in_pennies)
+    puts ""
+    puts "---"
+    puts ""
     puts "Item list:"
     for items in sale_list do
       puts "  $#{items}"
