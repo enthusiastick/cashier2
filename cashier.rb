@@ -1,5 +1,5 @@
 def number_check(xyz)
-  (xyz).match(/\A[+-]?\d+?(\.\d+)?\Z/)
+  (xyz).match(/^\d+(?:\.\d{0,2})?$/)
 end
 
 def zero_check(abc)
