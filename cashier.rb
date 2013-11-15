@@ -22,6 +22,10 @@ while true
   puts "What is the sale price?"
   price_input = gets.chomp
   if price_input == "exit"
+    if running_total_in_pennies == 0
+      puts "No sale!"
+      abort
+    end
     running_total_in_dollars = in_dollars(running_total_in_pennies)
     puts ""
     puts "---"
