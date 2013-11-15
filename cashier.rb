@@ -27,6 +27,7 @@ while true
       abort
     end
     running_total_in_dollars = in_dollars(running_total_in_pennies)
+    sale_list.delete_if(&:empty?)
     puts ""
     puts "---"
     puts Time.now.asctime
@@ -62,8 +63,11 @@ while true
     else
       change_in_pennies = paid_input_in_pennies - running_total_in_pennies
       change_in_dollars = in_dollars(change_in_pennies)
-      if zero_check(change_in_dollars) != true
-        puts "Thank you! The change is $#{change_in_dollars}0"
+      if change_in_pennies == 0
+        puts "Thank you! No change due."
+        abort
+      elsif zero_check(change_in_dollars) != true
+        puts "Thank you! The change is: $#{change_in_dollars}0"
         abort
       else
         puts "Thank you! The change is: $#{change_in_dollars}"
